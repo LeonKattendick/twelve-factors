@@ -22,7 +22,7 @@ public class SizeEntity {
     @Column(unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "size")
+    @OneToMany(mappedBy = "size", fetch = FetchType.LAZY)
     private List<ArticleSizeEntity> articleSizes;
 
 }
