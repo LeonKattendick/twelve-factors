@@ -1,5 +1,6 @@
 package de.kattendick.tf.service;
 
+import de.kattendick.tf.persistence.StoreRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -7,6 +8,6 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class StoreService {
 
-    private StoreService storeService;
+    private StoreRepository storeRepository;
 
 }
