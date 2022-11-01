@@ -8,7 +8,7 @@ Der Code des Microservices ist im Versionsverwaltungsprogramm unter [GitHub](htt
 Alle externen Abhängigkeiten wurden in der **pom.xml** hinterlegt. Über Maven werden diese im Build-Prozess verpackt und im Endprodukt mitgeliefert. Zusätzlich ist in dieser Datei der Prozessablauf dazu hinterlegt.
 
 ## [3] III. Config
-In der **application.properties** werden die zum Start benötigten Einstellungen hinterlegt. Hier werden die auf der Maschine definierten Umgebungsvariablen an gewissen Stellen eingesetzt. Über die Abhängigkeit **spring-dotenv** können diese Variablen explizit in einer **.env** Datei definiert werden. Dies dient hier zur Veranschaulichung und wird im Realbetrieb mit korrekten, hinterlegten Variablen gewechselt.
+In der **application.properties** werden die zum Start benötigten Einstellungen hinterlegt. Hier werden die auf der Maschine definierten Umgebungsvariablen an gewissen Stellen eingesetzt. Über die Abhängigkeit **spring-dotenv** können diese Variablen explizit in einer **.env** Datei definiert werden. Dies dient hier zur Veranschaulichung und einfacheren Ausführung. Im Realbetrieb würde diese Datei natürlich nicht im Repository geladen sein.
 
 ## [4] IV. Backing services
 Die Applikation ist mit einer Datenbank verbunden. Je nach Einstellung kann dies eine H2 oder MySQL Datenbank sein. In der Applikation wird die angebundene Datenbank durch das OR-Mapping Tool Hibernate abstrahiert.
