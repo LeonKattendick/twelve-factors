@@ -1,11 +1,17 @@
 package de.kattendick.tf.persistence.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class ArticleEntity {
 
@@ -17,7 +23,7 @@ public class ArticleEntity {
 
     private String manufacturer;
 
-    @OneToMany(mappedBy = "article")
+    @OneToMany(mappedBy = "article", fetch = FetchType.EAGER)
     private List<ArticleSizeEntity> articleSizes;
 
 }
