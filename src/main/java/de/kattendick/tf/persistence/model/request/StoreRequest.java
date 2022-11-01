@@ -6,17 +6,16 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 
 @Data
-public class ArticleSizeRequest {
+public class StoreRequest {
 
     @NotNull
-    @JsonProperty("article_id")
-    private long articleId;
+    private String name;
+
+    @NotNull
+    private String address;
 
     @NotNull
     @JsonProperty("size_id")
     private long sizeId;
-
-    @NotNull
-    private int amount;
 
 }
