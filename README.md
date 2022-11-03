@@ -9,7 +9,7 @@ Here a very simple minimum required article amount system for stores is implemen
 * There exist multiple sizes (S, M, L, ...)
 * Each store is assigned one size
 * Each size has an articles with an exact amount defined
-* Therefor each article can have multiple sizes with different quantities
+* Therefore each article can have multiple sizes with different quantities
 
 # Endpoints
 Below are listed all the endpoints of the microservice.
