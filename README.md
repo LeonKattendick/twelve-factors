@@ -76,3 +76,6 @@ Body:
 
 ### Getting all stores
 Location: ``GET http://localhost:8080/store``
+
+# Commands
+Building: `docker build -t leonkattendick/twelve-factors .`
