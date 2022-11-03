@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -32,4 +33,7 @@ public class StoreService {
         return storeRepository.save(articleEntity);
     }
 
+    public List<StoreEntity> getAllStores() {
+        return storeRepository.findAll();
+    }
 }

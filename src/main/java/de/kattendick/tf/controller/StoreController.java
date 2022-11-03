@@ -8,10 +8,10 @@ import de.kattendick.tf.service.StoreService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/store")
@@ -23,10 +23,15 @@ public class StoreController {
     private StoreMapper storeMapper;
 
     @PostMapping
-    public ResponseEntity<StoreResponse> createSize(@RequestBody @Validated StoreRequest storeRequest) {
+    public ResponseEntity<StoreResponse> createStore(@RequestBody @Validated StoreRequest storeRequest) {
 
         StoreEntity storeEntity = storeService.createStore(storeRequest);
 
         return ResponseEntity.ok(storeMapper.entityToResponse(storeEntity));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<StoreResponse>> getAllStores() {
+        return ResponseEntity.ok(storeService.getAllStores().stream().map(v -> storeMapper.entityToResponse(v)).collect(Collectors.toList()));
     }
 }
